@@ -1,0 +1,158 @@
+
+/* css reset */
+* {
+	vertical-align: baseline;
+	font-weight: inherit;
+	font-family: inherit;
+	font-style: inherit;
+	font-size: 100%;
+	border: 0 none;
+	outline: 0;
+	padding: 0;
+  margin: 0;
+  text-decoration: none;
+}
+
+
+
+/* css variables */
+:root {
+  /* pallete colors(dark to light):
+    #03045E
+    #023E8A
+    #0077B6
+    #0096C7
+    #00B4D8
+    #48CAE4
+    #90E0EF
+    #ADE8F4
+    #CAF0F8
+  */
+  /* color pallet */
+  --bg-color: white;
+  --button-color: #0077B6;
+  --button-hover-color: hsl(201, 100%, 27%);
+  --a-color: white;
+  --a-hover-color: #0077B6;
+  --nav-color: #272640;
+  --post-color: #00B4D8;
+
+}
+
+body{
+  background-color: var(--bg-color);
+
+}
+
+.container {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  @media (min-width: 768px) {
+    .container {
+      width: 750px;
+    }
+  }
+  @media (min-width: 992px) {
+    .container {
+      width: 970px;
+    }
+  }
+  @media (min-width: 1200px) {
+    .container {
+      width: 1170px;
+    }
+  }
+
+  .grid-container{
+    display: grid;
+  }
+
+  @media (min-width: 768px) {
+    .grid-item {
+      width: 63px;
+    }
+  }
+  @media (min-width: 992px) {
+    .grid-item {
+      width: 970px;
+    }
+  }
+  @media (min-width: 1200px) {
+    .grid-item {
+      width: 1170px;
+    }
+  }
+
+  /* navbar */
+  
+  .navbar{
+      background-color: var(--nav-color);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 10px;
+      /* margin-top: 10px; */
+      border-radius: 7px;
+  }
+
+  .navbar  a{
+    color: var(--a-color);
+    
+  } 
+
+  .nav-list {
+    list-style-type: none;
+  }
+
+  .nav-list  li{
+    display: inline-block;
+    padding: 20px;
+  }
+
+  .navbar li a:hover{
+    color: var(--a-hover-color);
+    
+  }
+
+  button{
+    padding: 10 15px;
+    background-color: var(--button-color);
+    border-radius: 50px;
+    border: none;
+    cursor: pointer;
+  }
+
+  button:hover{
+     background-color: var(--button-hover-color);   
+  }
+  
+  .logo{
+    height:40px;
+  }
+
+  /* todo: need to fill container */
+  .footer{
+    /* position: absolute;
+    bottom: 0; */
+    
+  }
+
+
+
+  /* product-list */
+  .product-list{
+    
+
+  }
+  .list-item-product{
+    text-align: center;
+  }
+  .list-item-product a{
+    color: black;
+  }
+  .list-item-product img{
+    height: 10rem;
+  }
