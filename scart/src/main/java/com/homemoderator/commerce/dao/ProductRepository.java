@@ -1,10 +1,10 @@
-package com.scart.commerce.dao;
+package com.homemoderator.commerce.dao;
 
-import com.scart.commerce.model.Order;
+import com.homemoderator.commerce.model.Product;
 import org.springframework.data.repository.CrudRepository;
 // This will be AUTO IMPLEMENTED by Spring into a Bean called userRepository
 // CRUD refers Create, Read, Update, Delete
 
-public interface OrderRepository extends CrudRepository<Order, Integer> {
+public interface ProductRepository extends CrudRepository<Product, Integer> {
 
 }

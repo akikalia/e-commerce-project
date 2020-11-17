@@ -1,10 +1,10 @@
-package com.scart.commerce.model;
+package com.homemoderator.commerce.model;
 
 import javax.persistence.*;
 import java.util.List;
 
 @Entity
-public class Order {
+public class Purchase {
 
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
@@ -13,7 +13,7 @@ public class Order {
     @ManyToOne
     private User user;
 
-    @ManyToMany(mappedBy = "orderList")
+    @ManyToMany(mappedBy = "purchaseList")
     private List<Product> productList;
 
     @Id

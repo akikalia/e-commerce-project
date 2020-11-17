@@ -6,6 +6,9 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<div class="footer">
-
+<%--todo: if signed in - show profile info & links... / if signed in and admin show admin panel--%>
+<div class="header">
+    <h1>
+        header
+    </h1>
 </div>

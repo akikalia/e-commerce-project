@@ -1,4 +1,4 @@
-package com.scart.commerce.model;
+package com.homemoderator.commerce.model;
 
 import javax.persistence.*;
 import java.util.List;
@@ -22,6 +22,14 @@ public class Category {
 
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    public List<Product> getProductList() {
+        return productList;
+    }
+
+    public void setProductList(List<Product> productList) {
+        this.productList = productList;
     }
 
     public String getName() {

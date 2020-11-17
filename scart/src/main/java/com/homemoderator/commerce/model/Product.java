@@ -1,4 +1,4 @@
-package com.scart.commerce.model;
+package com.homemoderator.commerce.model;
 
 import javax.persistence.*;
 import java.util.List;
@@ -6,7 +6,7 @@ import java.util.List;
 @Entity
 public class Product {
     @Id
-    @GeneratedValue(strategy= GenerationType.AUTO)
+    @GeneratedValue(strategy=GenerationType.AUTO)
     private Integer id;
 
     private String name;
@@ -16,13 +16,12 @@ public class Product {
     private int price;
 
     @ManyToMany
-    private List<Order> orderList;
+    private List<Purchase> purchaseList;
 
     @ManyToMany
     private List<Category> categoryList;
 
 
-    @Id
     public Integer getId() {
         return id;
     }

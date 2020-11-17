@@ -1,6 +1,7 @@
-package com.scart.commerce.controller;
+package com.homemoderator.commerce.controller;
 
-import com.scart.commerce.dao.ProductRepository;
+import com.homemoderator.commerce.dao.CategoryRepository;
+import com.homemoderator.commerce.dao.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -12,12 +13,15 @@ public class HomeController {
 
     @Autowired
     ProductRepository products;
+    @Autowired
+    CategoryRepository categories;
 
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public ModelAndView home(){
         ModelAndView mv = new ModelAndView();
-        mv.addObject("products", products);
-        mv.setViewName("main-page");
+        mv.addObject("categories", categories.findAll());
+        mv.addObject("products", products.findAll());
+        mv.setViewName("home-page");
         return mv;
     }
 }

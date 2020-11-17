@@ -1,4 +1,4 @@
-package com.scart.commerce;
+package com.homemoderator.commerce;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
