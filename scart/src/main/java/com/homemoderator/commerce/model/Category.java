@@ -9,11 +9,12 @@ public class Category {
     @GeneratedValue(strategy= GenerationType.AUTO)
     private Integer id;
 
+    private String name;
+
 
     @ManyToMany(mappedBy = "categoryList")
     private List<Product> productList;
 
-    private String name;
 
     @Id
     public Integer getId() {

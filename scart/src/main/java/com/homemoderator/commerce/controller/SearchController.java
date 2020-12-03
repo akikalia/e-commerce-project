@@ -1,7 +1,7 @@
 package com.homemoderator.commerce.controller;
 
 
-import com.homemoderator.commerce.dao.ProductRepository;
+import com.homemoderator.commerce.repository.ProductRepository;
 import com.homemoderator.commerce.model.Product;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

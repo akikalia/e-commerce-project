@@ -13,8 +13,8 @@ public class Purchase {
     @ManyToOne
     private User user;
 
-    @ManyToMany(mappedBy = "purchaseList")
-    private List<Product> productList;
+    @OneToMany(mappedBy = "purchase")
+    private List<PurchaseItem> PurchaseItemList;
 
     @Id
     public Integer getId() {
@@ -23,6 +23,22 @@ public class Purchase {
 
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+    public List<PurchaseItem> getPurchaseItemList() {
+        return PurchaseItemList;
+    }
+
+    public void setPurchaseItemList(List<PurchaseItem> purchaseItemList) {
+        PurchaseItemList = purchaseItemList;
     }
 
 }

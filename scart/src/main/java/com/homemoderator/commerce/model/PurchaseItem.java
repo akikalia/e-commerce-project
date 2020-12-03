@@ -3,25 +3,27 @@ package com.homemoderator.commerce.model;
 import javax.persistence.*;
 
 @Entity
-public class CartItem {
+public class PurchaseItem {
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
+
     private String id;
 
     @ManyToOne
-    private Cart cart;
+    private Purchase purchase;
 
     @ManyToOne
     private Product product;
 
     private int quantity;
 
-    public Cart getCart() {
-        return cart;
+
+    public Purchase getPurchase() {
+        return purchase;
     }
 
-    public void setCart(Cart cart) {
-        this.cart = cart;
+    public void setPurchase(Purchase purchase) {
+        this.purchase = purchase;
     }
 
     public Product getProduct() {

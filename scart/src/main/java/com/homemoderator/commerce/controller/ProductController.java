@@ -1,7 +1,8 @@
 package com.homemoderator.commerce.controller;
 
-import com.homemoderator.commerce.dao.ProductRepository;
+import com.homemoderator.commerce.repository.ProductRepository;
 import com.homemoderator.commerce.model.Product;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -12,7 +13,7 @@ import java.util.Optional;
 @Controller
 @RequestMapping("/product")
 public class ProductController {
-
+    @Autowired
     private ProductRepository products;
     @GetMapping
     ModelAndView getProduct(int id){

@@ -5,7 +5,8 @@ import java.util.List;
 
 @Entity
 public class Cart {
-
+    @Id
+    @GeneratedValue(strategy= GenerationType.AUTO)
     private String id;
 
     @OneToOne(mappedBy = "cart")

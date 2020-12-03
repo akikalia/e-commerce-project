@@ -2,6 +2,9 @@ package com.homemoderator.commerce.model;
 
 import javax.persistence.*;
 import java.util.List;
+//TODO: set relationship attribute to fetch = FetchType.LAZY, on all POJOs, or else everything gets fetched(probably)
+//      Example:  @OneToMany(fetch = FetchType.LAZY, mappedBy = "employee")
+//TODO: learn more about @JoinColumn annotation
 
 @Entity
 public class User {
@@ -17,6 +20,8 @@ public class User {
 
     private String email;
 
+    private int balance;
+
     @OneToOne
     private Cart cart;
 
@@ -30,6 +35,30 @@ public class User {
 
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    public int getBalance() {
+        return balance;
+    }
+
+    public void setBalance(int balance) {
+        this.balance = balance;
+    }
+
+    public Cart getCart() {
+        return cart;
+    }
+
+    public void setCart(Cart cart) {
+        this.cart = cart;
+    }
+
+    public List<Purchase> getPurchaseList() {
+        return purchaseList;
+    }
+
+    public void setPurchaseList(List<Purchase> purchaseList) {
+        this.purchaseList = purchaseList;
     }
 
     public String getUsername() {

@@ -15,10 +15,13 @@ public class Product {
 
     private int price;
 
-    @ManyToMany
-    private List<Purchase> purchaseList;
+    @OneToMany(mappedBy = "product")
+    private List<PurchaseItem> PurchaseItemList;
 
-    @ManyToMany
+    @OneToMany(mappedBy = "product")
+    private List<CartItem> cartItemList;
+
+    @ManyToMany(mappedBy = "productList")
     private List<Category> categoryList;
 
 
@@ -28,6 +31,30 @@ public class Product {
 
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    public List<PurchaseItem> getPurchaseItemList() {
+        return PurchaseItemList;
+    }
+
+    public void setPurchaseItemList(List<PurchaseItem> purchaseItemList) {
+        PurchaseItemList = purchaseItemList;
+    }
+
+    public List<CartItem> getCartItemList() {
+        return cartItemList;
+    }
+
+    public void setCartItemList(List<CartItem> cartItemList) {
+        this.cartItemList = cartItemList;
+    }
+
+    public List<Category> getCategoryList() {
+        return categoryList;
+    }
+
+    public void setCategoryList(List<Category> categoryList) {
+        this.categoryList = categoryList;
     }
 
     public String getName() {
