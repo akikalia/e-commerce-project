@@ -46,18 +46,19 @@ body{
   background-color: var(--bg-color);
 }
 
+ul{
+  list-style-type: none;
+}
 
 
   /* navbar */
   
   .navbar{
       background-color: var(--nav-color);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 0 10px;
+      
+      /* padding: 0 10px; */
       /* margin-top: 10px; */
-      border-radius: 7px;
+      /* border-radius: 7px; */
   }
 
   .navbar  a{
@@ -65,11 +66,7 @@ body{
     
   } 
 
-  .nav-list {
-    list-style-type: none;
-  }
-
-  .nav-list  li{
+  .navbar  li{
     display: inline-block;
     padding: 20px;
   }
@@ -138,7 +135,7 @@ body{
   .product:hover{
     background-color: var(--secondary-color);
     animation-name: change-bg;
-    animation-duration: 0.5s;
+    animation-duration: 0.3s;
   }
 
   /* .slider{
