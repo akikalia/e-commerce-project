@@ -1,3 +1,6 @@
+/* font */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap');
+
 
 /* css reset */
 * {
@@ -30,20 +33,20 @@
     #CAF0F8
   */
   /* color pallet */
-  --primary-color: hsl(201, 100%, 27%);
-  --secondary-color: #0077B6;
+  --primary: #084a83;
+  --secondary: #539ddb;
+  --trinary: #c6e5f3;
+  --dark-gray: 	#2c3434;
+  --gray: #4c545c;
+  --light-gray: #4c545c;
   --bg-color: white;
-  --button-color: #0077B6;
-  --button-hover-color: hsl(201, 100%, 27%);
-  --a-color: black;/* white; */
-  --a-hover-color: grey;/* #0077B6; */
-  --nav-color: white;/* #272640; */
-  --post-color: #00B4D8;
-
 }
 
-body{
+
+
+body {
   background-color: var(--bg-color);
+  font-family: 'Roboto', sans-serif;
 }
 
 ul{
@@ -54,39 +57,48 @@ ul{
   /* navbar */
   
   .navbar{
-      background-color: var(--nav-color);
+      /* background-color: var(--trinary); */
       
       /* padding: 0 10px; */
       /* margin-top: 10px; */
       /* border-radius: 7px; */
   }
 
-  .navbar  a{
-    color: var(--a-color);
-    
+  a, p {
+    color: var(--primary);
   } 
-
+/* 
   .navbar  li{
     display: inline-block;
     padding: 20px;
-  }
+  } */
 
   .navbar li a:hover{
-    color: var(--a-hover-color);
-    
+    color: var(--secondary);
   }
-
+  @media (max-width:767px){
+    .menu-bar{
+      flex-direction: column;
+      background-color: var(--trinary);
+      border-radius: 15px;
+      box-shadow: 5px 2px 5px #47bafc6b;
+    }
+    .menu-bar li{
+      padding: 10px;
+    }
+  }
+ 
+/* 
   button{
     padding: 10 15px;
-    background-color: var(--button-color);
     border-radius: 50px;
     border: none;
     cursor: pointer;
   }
 
   button:hover{
-     background-color: var(--button-hover-color);   
-  }
+     background-color: var(--secondary);   
+  } */
   
   .logo{
     height:40px;
@@ -96,9 +108,36 @@ ul{
   .footer{
     /* position: absolute;
     bottom: 0; */
-    
+    display: none;
   }
 
+
+  .color-primary{
+    color: var(--primary);
+  }
+  .color-primary-hover:hover {
+    color: var(--primary);
+  }
+
+  .color-secondary{
+    color: var(--secondary);
+  }
+
+  .color-secondary-hover:hover{
+    color: var(--secondary);
+  }
+
+  .color-trinary{
+    color: var(--trinary);
+  }
+
+  .color-trinary-hover:hover{
+    color: var(--trinary);
+  }
+
+  .bg-white{
+    background-color: white;
+  }
 
 
   /* product-list */
@@ -109,9 +148,6 @@ ul{
   .list-item-product{
     text-align: center;
   }
-  .list-item-product a{
-    color: black;
-  }
   .list-item-product img{
     height: 10rem;
   }
@@ -120,7 +156,7 @@ ul{
   /* product */
   .product {
     background-color: white;
-    color: black;
+    /* color: black; */
     border-radius: 10px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
     padding: 15px;
@@ -129,37 +165,160 @@ ul{
 
   @keyframes change-bg {
     from {background-color: white;}
-    to {background-color: var(--secondary-color);}
+    to {background-color: var(--trinary);}
   }
 
   .product:hover{
-    background-color: var(--secondary-color);
+    background-color: var(--trinary);
     animation-name: change-bg;
     animation-duration: 0.3s;
   }
 
-  /* .slider{
-    width:1000px;
-    height: 100px;
-    position: relative;
-    background-color: blanchedalmond;
-    box-shadow: 0 10px 20px -10px rgba(0, 0, 0, 0.2);
+
+
+
+/* search */
+
+  .search-bar{
+    border-bottom: 1px var(--primary) solid;
   }
 
-  .slide{
-    height:100px;
-    display: flex;
-    align-items: center;
-
+  @keyframes change-bottom-border {
+    from {
+      border-bottom: 1px var(--primary) solid;
+    }
+    to {
+      border-bottom: 3px var(--primary) solid;
+    }
   }
 
-  .slide img{
-    height: 70px;
-    padding: 0 30 0 30 0;
-    animation: slideshow 8s linear infinite;
+  .search-bar:focus{
+    border-bottom: 3px var(--primary) solid;
+    animation-name: change-bottom-border;
+    animation-duration: 0.1s;
   }
 
-  @Keyframes slideshow{
-    0% {transform: translateX(0);}
-    100% {transform: translateX(-100);}
+
+
+  /* hamburger */
+
+  #hamburger-checkbox{
+    display: none;
+  }
+  .hamburger-button div{
+    width: 30px;
+    height: 4px;
+    margin: 4px 0;
+    background-color: var(--primary);
+    border-radius: 2px;
+    transition: 0.2s;
+  }
+
+  .hamburger-button{
+    cursor: pointer;
+  }
+
+  #hamburger-checkbox:checked + label div:first-child{
+    transform: translateY(4px) rotate(45deg);
+  }
+
+  #hamburger-checkbox:checked + label div:nth-child(2){
+    display: none;
+  }
+
+  #hamburger-checkbox:checked + label div:last-child{
+    transform: translateY(-4px) rotate(-45deg);
+  }
+
+
+
+  .nav-icons p{
+    font-size: 11px;
+    padding: 6px 0;
+  }
+
+
+  /* @media (min-width:768px){
+    .nav-icons p:last-child{
+      padding-left: 10px;
+    } 
   } */
+
+
+  /* carousel */
+
+  .carousel-image{
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    overflow: hidden;
+    border-radius: inherit;
+  }
+
+  .carousel{
+    position: relative;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  }
+  
+
+  .arrow{
+    cursor: pointer;
+    position: absolute;
+    top: 45%;
+    background-color: rgba(0, 0, 0, 0.333);
+    box-shadow: 0px 0px 5px 4px rgba(0, 0, 0, 0.2);
+  }
+  .arrow:hover{
+    background-color: rgba(0, 0, 0, 0.7);
+  }
+  
+  .arrow:hover > i{
+    color: white;
+  }
+
+  .arrow i{
+    color: rgba(255, 255, 255, 0.534);
+  }
+
+  .left-arrow{
+    border-radius: 0px 5px 5px 0px;
+    left: 0;
+  }
+
+  .right-arrow{
+    border-radius: 5px 0px 0px 5px;
+    right: 0;
+  }
+
+  /* arrow click animation */
+  @keyframes arrow-click{
+    0%{transform: scale(1);}
+    50%{transform: scale(0.6);}
+    100%{transform: scale(1); }
+  }
+  @keyframes arrow-unclick{
+    0%{transform: scale(1);}
+    50%{transform: scale(0.6);}
+    100%{transform: scale(1); }
+  }
+
+  .arrow-checkbox:checked + label i{
+    animation: arrow-click 0.2s;
+  }
+  .arrow-checkbox:not(:checked) + label i{
+    animation: arrow-unclick 0.2s;
+  }
+  
+  .carousel-tabs{
+    position: absolute;
+    bottom:0;
+  }
+
+  .carousel-tabs li{
+    display: inline-block;
+  }
+  
+  .carousel-tabs i{
+    color: white;
+  }

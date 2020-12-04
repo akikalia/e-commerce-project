@@ -4,27 +4,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="layout.css">
     <link rel="stylesheet" href="util.css">
-
+    <!-- font awesome icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
     <title>Document</title>
 </head>
 <body>
     <!-- navbar -->
-    <div class="container">
+    <div class="container" id="header">
         <div class="navbar main flex align-center justify-space-between">
-            <ul class="nav-list">
-                <li><a href="#news">News</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li><a href="#about">About</a></li>
-            </ul>
-            <img class="logo" src="resources/logo/logo_transparent.png" alt="logo">
-            <div class="nav-buttons">
-                <button><a class="button" href="#home">cart</a></button>
-                <button><a class="button" href="#contact">login</a></button>
-                <button><a class="button" href="#about">search</a></button>
+            <div class="px-1 hamburger-button display-mobile">
+                <input type="checkbox" id="hamburger-checkbox"/>
+                <label class="hamburger-button" for="hamburger-checkbox">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </label>                
+            </div>
+            <img class="logo px-1" src="resources/logo/logo_transparent.png" alt="logo">
+            <div class="search hide-mobile search-form">
+                <form class="flex justify-center align-center">                    
+                    <button class="btn btn-outline-secondary bg-white" type="button"><i class="fas fa-search color-primary"></i></button>
+                    <input class="color-primary search-bar" type="text" placeholder="Search">
+                </form>
+            </div>
+            <div class="navbar nav-icons flex my-1"> 
+                <a class=" display-mobile flex flex-column align-center" id="search-mobile-button" href="#search"><i class="fas fa-search color-primary fa-lg"></i><p>Search</p></a>
+                <!-- if unauthorized add id="authorize" to account -->
+                <a class="mx-1 flex flex-column align-center" id="authorize" href="#account"><i class="fas fa-user-circle color-primary fa-lg"></i><p>Account</p></a>
+                <a class="flex flex-column align-center" href="#cart"><i class="fas fa-shopping-cart color-primary fa-lg"></i><p>Cart</p></a>
             </div>
         </div>
-        <div class="navbar">
-            <ul class="nav-category-list flex align-center justify-space-between wrap">
+        <div class="navbar hide-mobile flex justify-center align-center p-2" id="hamburger-navbar">
+            <ul class="menu-bar flex align-center justify-space-between wrap ">
                 <li><a href="#news">Mobile</a></li>
                 <li><a href="#contact">Accessories</a></li>
                 <li><a href="#about">Tablets</a></li>
@@ -36,56 +47,73 @@
 
             </ul>
         </div>
+        
     </div>
     <!-- main-container -->
     <div class="container">
-        <div class="slider">
-                <div class="slide">
-                    <img src="" alt="">
-                    <img src="" alt="">
-                    <img src="" alt="">
-                    <img src="" alt="">
-                    <img src="" alt="">
+        <div class="carousel">
+                <div class="hide" id="carousel_source">
+                    <img src="resources/slideshow/001.jpg" alt="001">
+                    <img src="resources/slideshow/002.jpg" alt="002">
+                    <img src="resources/slideshow/003.jpg" alt="003">
+                    <img src="resources/slideshow/004.jpg" alt="004">
                 </div>
+                <div class="flex justify-center">
+                    <ul class="carousel-tabs">
+                        <li><i class="far fa-circle"></i></li>
+                        <li><i class="far fa-circle"></i></li>
+                        <li><i class="far fa-circle"></i></li>
+                        <li><i class="far fa-circle"></i></li>
+                    </ul>
+                </div>
+                <img class="carousel-image" src="resources/slideshow/001.jpg" id="carousel_dest" alt="carousel">
+                <input class="arrow-checkbox hide" type="checkbox" id="left-arrow-checkbox"/>
+                <label for="left-arrow-checkbox">
+                    <span class="arrow left-arrow"><i class="fas fa-chevron-left fa-3x"></i></span>                    
+                </label>
+                <input class="arrow-checkbox hide" type="checkbox" id="right-arrow-checkbox"/>
+                <label for="right-arrow-checkbox">                  
+                    <span class="arrow right-arrow"><i class="fas fa-chevron-right fa-3x"></i></span>
+                </label>
         </div>
         <div class=" grid">
             <a class="list-item-product product" href="#product-id">
-                <img src="resources/products/iphone.jpeg" alt="iphone">
+                <img src="resources/products/iphone.png" alt="iphone">
                 <p class="list-item-product-price">999$</p>
                 <p class="list-item-product-description">iphone 12</p>
             </a>
             <a class="list-item-product product" href="#product-id">
-                <img src="resources/products/iphone.jpeg" alt="iphone">
+                <img src="resources/products/iphone.png" alt="iphone">
                 <p class="list-item-product-price">999$</p>
                 <p class="list-item-product-description">iphone 12</p>
             </a>
             <a class="list-item-product product" href="#product-id">
-                <img src="resources/products/iphone.jpeg" alt="iphone">
+                <img src="resources/products/iphone.png" alt="iphone">
                 <p class="list-item-product-price">999$</p>
                 <p class="list-item-product-description">iphone 12</p>
             </a>
             <a class="list-item-product product" href="#product-id">
-                <img src="resources/products/iphone.jpeg" alt="iphone">
+                <img src="resources/products/iphone.png" alt="iphone">
                 <p class="list-item-product-price">999$</p>
                 <p class="list-item-product-description">iphone 12</p>
             </a>
             <a class="list-item-product product" href="#product-id">
-                <img src="resources/products/iphone.jpeg" alt="iphone">
+                <img src="resources/products/iphone.png" alt="iphone">
                 <p class="list-item-product-price">999$</p>
                 <p class="list-item-product-description">iphone 12</p>
             </a>
             <a class="list-item-product product" href="#product-id">
-                <img src="resources/products/iphone.jpeg" alt="iphone">
+                <img src="resources/products/iphone.png" alt="iphone">
                 <p class="list-item-product-price">999$</p>
                 <p class="list-item-product-description">iphone 12</p>
             </a>
             <a class="list-item-product product" href="#product-id">
-                <img src="resources/products/iphone.jpeg" alt="iphone">
+                <img src="resources/products/iphone.png" alt="iphone">
                 <p class="list-item-product-price">999$</p>
                 <p class="list-item-product-description">iphone 12</p>
             </a>
             <a class="list-item-product product" href="#product-id">
-                <img src="resources/products/iphone.jpeg" alt="iphone">
+                <img src="resources/products/iphone.png" alt="iphone">
                 <p class="list-item-product-price">999$</p>
                 <p class="list-item-product-description">iphone 12</p>
             </a>
@@ -109,5 +137,8 @@
         </div>
         <a href="hello"></a>
     </div>
+    <script src="slideshow.js"></script>
+    <script src="mobile-nav.js"></script>
+    <script src="popup.js"></script>
 </body>
 </html>
