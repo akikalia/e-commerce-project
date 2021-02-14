@@ -5,6 +5,7 @@ var dest;
 var flagReset = false;
 var tabs;
 var changes = 0;
+var lastChanged = Date.now();
 
 //changes to previous image
 function left(){
@@ -47,7 +48,7 @@ function change(){
 
 //changes image to i+1 if user input flag was not triggered, stops after few changes 
 function changeTimed(){
-    if (location.hash != "" || changes > 5){
+    if (location.hash != "" || changes > 5 || (Date.now() - lastChanged) < 2900){
         return;
     }
     if (flagReset){
