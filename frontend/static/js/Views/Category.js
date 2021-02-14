@@ -11,7 +11,11 @@ export default class extends AbstractView {
         return await fetch('https://fakestoreapi.com/products/category/' + this.params["id"])
             .then(res => res.json())
             .then(products => { 
-                let res = `<div class=" grid  grid-products">`;
+                let title = this.params["id"].replace(/%20/g, " ");
+                let res = `
+                
+                <div class="flex flex-row justify-center align-center m-1"><p class="l-text">${title.charAt(0).toUpperCase() + title.slice(1)}</p></div>
+                <div class=" grid  grid-products">`;
                 
                 products.forEach(product => {
                     res += `

@@ -11,10 +11,13 @@ export default class extends AbstractView {
         return await fetch('https://fakestoreapi.com/products/categories')
             .then(res => res.json())
             .then(categories => { 
-                let res = `<div class=" grid  grid-products">`;
+                let res = `
+                <div class="flex flex-row justify-center align-center m-1"><p class="l-text">All Categories</p></div>
+        
+                <div class=" grid  grid-products">`;
                 categories.forEach(category => {
                     res += `
-                    <a class="list-item-product product" href="#categories/${category}">
+                    <a class="list-item-product product height-quater" href="#categories/${category}">
                         <p class="list-item-product-price">${category}</p>
                     </a>
                     `

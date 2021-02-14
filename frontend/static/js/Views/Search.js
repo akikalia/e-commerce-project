@@ -15,6 +15,7 @@ export default class extends AbstractView {
             .then(products => { 
                 let res = `
                 
+                <div class="flex flex-row justify-center align-center m-1"><p class="l-text">Search Results</p></div>
                 <div class=" grid grid-products">`;
                 
                 products.forEach(product => {

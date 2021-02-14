@@ -122,6 +122,9 @@
     .hide-mobile{
       display: none;
     }
+    .carousel{
+      width: 100%;
+    }
   }
 
   /* small screen */
@@ -145,6 +148,9 @@
     .hide-mobile{
       display: none;
     }
+    .carousel{
+      width: 100%;
+    }
   }
 
   /* meduim screen */
@@ -164,10 +170,13 @@
       grid-template-columns: 1fr;
     }
     .display-mobile{
-      display: none;
+      display: block;
     }
     .hide-mobile{
-      display: block;
+      display: none;
+    }
+    .carousel{
+      width: 100%;
     }
   }
   /* large screen */

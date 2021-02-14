@@ -12,7 +12,9 @@ export default class extends AbstractView {
             .then(product => { 
                 return `
                         <div class="grid grid-sections-2 size-100 my-2">
-                            <img class="product-page-image my-3" src="${product.image}" alt="">
+                            
+                                <img class="product-page-image my-3" src="${product.image}" alt="">
+                            
                             <div>
                                 <p class="product-page-title my-3">${product.title}</p>
                                 <p class="product-page-price my-1">$${product.price}</h3>

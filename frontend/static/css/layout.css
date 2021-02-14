@@ -108,7 +108,7 @@ ul{
   .footer{
     /* position: absolute;
     bottom: 0; */
-    display: none;
+    /* display: blo; */
   }
 
 
@@ -249,17 +249,20 @@ ul{
 
   /* carousel */
 
-  .carousel-image{
-    width: 100%;
-    height: 300px;
+    .carousel-image{
+    /* height:100%; */
+    max-width: 95%;
+    height: 400px;
     object-fit: cover;
     overflow: hidden;
     border-radius: inherit;
   }
 
+
   .carousel{
     position: relative;
     border-radius: 10px;
+    width: 100%;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
   }
   
@@ -480,4 +483,21 @@ ul{
   #dark-mode-toggle{
     cursor: pointer;
     background-color: var(--bg-color);
+  }
+
+  .underline{
+    text-decoration: underline;
+  }
+
+  .height-quater{
+    height: 25%;
+  }
+
+  .footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: var(--trinary);
+    text-align: center;
   }

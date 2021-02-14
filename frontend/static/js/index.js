@@ -55,7 +55,6 @@ const router = async () => {
             result: location.hash.match(pathToRegex(route.path))
         };
     });
-    console.log(location.hash);
     let match = matches.find(match => match.result !== null);
     if (!match){
         match = {
@@ -67,7 +66,6 @@ const router = async () => {
     
     let viewTag = document.querySelector("#view")
     viewTag.innerHTML = (new Loader()).getHtml();
-    console.log(match.route.path);
     
     let res = await view.getHtml();
     if (!res){
@@ -88,7 +86,6 @@ document.addEventListener("DOMContentLoaded", ()=>{
 
 
 document.addEventListener("onhashchange", ()=>{
-    console.log("hash change!")
     history.pushState(nil, nil, url)
     router();
 });

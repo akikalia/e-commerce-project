@@ -13,12 +13,12 @@ export default class extends AbstractView {
         return await fetch('https://fakestoreapi.com/products')
             .then(result => result.json())
             .then(products => { 
-                let res = `<div class="carousel">
+                let res = `<div class="flex flex-row justify-center align-center"><div class="carousel">
                 <div class="hide" id="carousel_source">
-                    <img src="static/resources/slideshow/001.jpg" alt="001">
-                    <img src="static/resources/slideshow/002.jpg" alt="002">
-                    <img src="static/resources/slideshow/003.jpg" alt="003">
-                    <img src="static/resources/slideshow/004.jpg" alt="004">
+                    <a href="#categories/men%20clothing"><img src="https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg" alt="001"></a>
+                    <a href="#categories/jewelery"><img src="https://fakestoreapi.com/img/71YAIFU48IL._AC_UL640_QL65_ML3_.jpg" alt="002"></a>
+                    <a href="#categories/electronics"><img src="https://fakestoreapi.com/img/81Zt42ioCgL._AC_SX679_.jpg" alt="003"></a>
+                    <a href="#categories/women%20clothing"><img src="https://fakestoreapi.com/img/71HblAHs5xL._AC_UY879_-2.jpg" alt="004"></a>
                 </div>
                 <div class="flex justify-center">
                     <ul class="carousel-tabs">
@@ -28,7 +28,9 @@ export default class extends AbstractView {
                         <li><i class="far fa-circle"></i></li>
                     </ul>
                 </div>
-                <img class="carousel-image" src="static/resources/slideshow/001.jpg" id="carousel_dest" alt="carousel">
+                <div class="flex flex-row justify-center align-center">
+                    <a id="carousel_dest" href="#categories/men%20clothing"><img class="carousel-image" src="https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg"  alt="carousel"></a>
+                </div>
                 <input class="arrow-checkbox hide" type="checkbox" id="left-arrow-checkbox"/>
                 <label for="left-arrow-checkbox">
                     <span class="arrow left-arrow"><i class="fas fa-chevron-left fa-3x"></i></span>                    
@@ -37,7 +39,7 @@ export default class extends AbstractView {
                 <label for="right-arrow-checkbox">                  
                     <span class="arrow right-arrow"><i class="fas fa-chevron-right fa-3x"></i></span>
                 </label>
-                </div>
+                </div></div>
                 <div class=" grid grid-products">`;
                 
                 products.forEach(product => {

@@ -1,10 +1,10 @@
 
 var i = 0;
 var images;
-var time = 3000;
 var dest;
 var flagReset = false;
 var tabs;
+var changes = 0;
 
 //changes to previous image
 function left(){
@@ -39,13 +39,17 @@ function change(){
         i = images.length-1;
     }
     i %= images.length;
-    dest.src = images[i].src;
+    dest.firstChild.src = images[i].firstChild.src;
+    dest.href = images[i].href;
     tabs[i].children[0].classList.remove("far");
     tabs[i].children[0].classList.add("fas");
 }
 
-//changes image to i+1 if user input flag was not triggered
+//changes image to i+1 if user input flag was not triggered, stops after few changes 
 function changeTimed(){
+    if (location.hash != "" || changes > 5){
+        return;
+    }
     if (flagReset){
         flagReset = false;   
     }else{
@@ -53,21 +57,20 @@ function changeTimed(){
         i++;
         change();
     }
-    setTimeout(changeTimed, time);
+    timer = setTimeout(changeTimed, 3000);
 }
 
 function runCarousel(){
-
+    changes++;
     images = document.getElementById("carousel_source").children;
     dest = document.getElementById("carousel_dest");
-    leftArrow = document.getElementsByClassName("left-arrow")[0];
-    rightArrow = document.getElementsByClassName("right-arrow")[0];
     tabs = document.getElementsByClassName("carousel-tabs")[0].children;
     
-    leftArrow.addEventListener("click", left);
+    document.getElementsByClassName("left-arrow")[0].addEventListener("click", left);
     
-    rightArrow.addEventListener("click", right);
-    setTimeout(changeTimed, time);
+    document.getElementsByClassName("right-arrow")[0].addEventListener("click", right);
+    
+    timer = setTimeout(changeTimed, 3000);
 
 }
 
