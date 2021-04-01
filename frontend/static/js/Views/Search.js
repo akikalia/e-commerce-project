@@ -7,9 +7,9 @@ export default class extends AbstractView {
     }
 
     async getHtml() {
-        //sadly no search option in fake commerce api (would fetch('https://fakestoreapi.herokuapp.com/search/' + this.params["name"]))
+        //sadly no search option in fake commerce api (would fetch('https://fakestoreapi.com/search/' + this.params["name"]))
         this.setTitle("Search");
-        return await fetch('https://fakestoreapi.herokuapp.com/products?limit=7')
+        return await fetch('https://fakestoreapi.com/products?limit=7')
             .then(result => result.json())
                 //todo: search results 
             .then(products => { 
@@ -19,11 +19,10 @@ export default class extends AbstractView {
                 <div class=" grid grid-products">`;
                 
                 products.forEach(product => {
-                    let image = product.image.replace('https://fakestoreapi.com/', 'https://fakestoreapi.herokuapp.com/');
                     res += `
                     
                     <a class="list-item-product product" href="#products/${product.id}">
-                        <img src="${image}" alt="${product.title}">
+                        <img src="${product.image}" alt="${product.title}">
                         <p class="list-item-product-price">${product.price}$</p>
                         <p class="list-item-product-description">${product.title}</p>
                     </a>

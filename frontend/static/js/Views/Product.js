@@ -7,14 +7,13 @@ export default class extends AbstractView {
     }
     async getHtml() {
         this.setTitle("Product");
-        return await fetch('https://fakestoreapi.herokuapp.com/products/' + this.params["id"])
+        return await fetch('https://fakestoreapi.com/products/' + this.params["id"])
             .then(res => res.json())
-            .then(product => {
-                let image = product.image.replace('https://fakestoreapi.com/', 'https://fakestoreapi.herokuapp.com/'); 
+            .then(product => { 
                 return `
                         <div class="grid grid-sections-2 size-100 my-2">
                             
-                                <img class="product-page-image my-3" src="${image}" alt="">
+                                <img class="product-page-image my-3" src="${product.image}" alt="">
                             
                             <div>
                                 <p class="product-page-title my-3">${product.title}</p>

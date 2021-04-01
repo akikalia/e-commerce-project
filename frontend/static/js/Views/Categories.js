@@ -8,7 +8,7 @@ export default class extends AbstractView {
 
     async getHtml() {
         this.setTitle("Categories");
-        return await fetch('https://fakestoreapi.herokuapp.com/products/categories')
+        return await fetch('https://fakestoreapi.com/products/categories')
             .then(res => res.json())
             .then(categories => { 
                 let res = `
