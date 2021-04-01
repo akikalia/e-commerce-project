@@ -38,7 +38,7 @@ export default class extends AbstractView {
     // }
 
     async getHtml() {
-        let cart = await fetch('https://fakestoreapi.com/carts/5')
+        let cart = await fetch('https://fakestoreapi.herokuapp.com/carts/5')
             .then(result => result.json());
 
                 
@@ -57,7 +57,7 @@ export default class extends AbstractView {
         let promises = await Promise.all(cart.products.map(productRef =>{
             quantity += productRef.quantity;
             console.log("fetching from api");
-            return fetch('https://fakestoreapi.com/products/' + productRef.productId);
+            return fetch('https://fakestoreapi.herokuapp.com/products/' + productRef.productId);
         }));
 
         // promises = Promise.allSettled(promises);
@@ -71,10 +71,11 @@ export default class extends AbstractView {
         });
         products.forEach((product)=>{
             console.log("getting result");
+            let image = product.image.replace('https://fakestoreapi.com/', 'https://fakestoreapi.herokuapp.com/');
             price += product.price;
             res += `
                 <div class="grid grid-sections-4 cart-section">
-                    <img class="cart-image" src="${product.image}" alt="">
+                    <img class="cart-image" src="${image}" alt="">
                     <p>${product.title}</p>
                     <div class="flex flex-column justify-center">
                         <input class="product-page-input" type="number" value="${product.quantity}"/>

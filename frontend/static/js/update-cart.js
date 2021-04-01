@@ -10,7 +10,7 @@ document.querySelector("#update-cart").addEventListener("submit", async (e)=>{
     let tag = document.createElement("div");
     tag.className = "button-loader";
     button.appendChild(tag);
-    await fetch('https://fakestoreapi.com/carts/7',{
+    await fetch('https://fakestoreapi.herokuapp.com/carts/7',{
             method:"PUT",
             //todo get elements and values
             body:JSON.stringify(
